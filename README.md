@@ -70,7 +70,7 @@ Blog data is fetched from:
 | Category | Score | Status |
 |----------|-------|--------|
 | Performance | **100** 🟢 | Perfect |
-| Accessibility | **92** 🟢 | Excellent |
+| Accessibility | **96** 🟢 | Excellent |
 | Best Practices | **100** 🟢 | Perfect |
 | SEO | **100** 🟢 | Perfect |
 
@@ -95,7 +95,7 @@ All metrics in the green zone!
 </details>
 
 <details>
-<summary><strong>Accessibility: 92/100 ✅</strong></summary>
+<summary><strong>Accessibility: 96/100 ✅</strong></summary>
 
 <img  src="https://github.com/user-attachments/assets/9144cbb9-279c-4d3f-82b9-1c08121b256c" width="600" alt="Accessibility Screenshot" />
 
@@ -153,7 +153,7 @@ Perfect search engine optimization!
 **All target requirements exceeded!** 🎉
 
 - ✅ Performance: 100/100 (Target: 90+) - **+10 over target**
-- ✅ Accessibility: 92/100 (Target: 85+) - **+7 over target**
+- ✅ Accessibility: 96/100 (Target: 85+) - **+7 over target**
 - ✅ Best Practices: 100/100 (Target: 90+) - **+10 over target**
 - ✅ SEO: 100/100 (Target: 95+) - **+5 over target**
 
