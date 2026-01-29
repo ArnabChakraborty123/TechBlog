@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'TechBlog',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'TechBlog - Latest Tech News',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TechBlog - Latest Tech News & Articles',
     description: 'Discover the latest tech news, tutorials, and industry insights from our expert writers.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
