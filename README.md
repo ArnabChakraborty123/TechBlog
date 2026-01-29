@@ -6,17 +6,23 @@ This project focuses on performance, accessibility, and modern SEO best practice
 ---
 
 ## 🔗 Live Deployment
-👉 https://YOUR-VERCEL-URL.vercel.app
+👉 [https://tech-blog-five-theta.vercel.app](https://tech-blog-five-theta.vercel.app)
 
 ## 📂 GitHub Repository
-👉 https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPOSITORY-NAME
+👉 [https://github.com/ArnabChakraborty123/TechBlog](https://github.com/ArnabChakraborty123/TechBlog)
 
 ---
 
 ## 📌 Project Overview
 This application displays a list of tech blog articles fetched from a public API.  
 Users can search articles, filter them by category, and read full content inside an accessible modal.  
-The project strictly follows the provided technical, SEO, accessibility, and performance requirements.
+
+**Core Focus Areas:**
+- Performance
+- SEO
+- Accessibility
+- Responsive design
+- Modern frontend best practices
 
 ---
 
@@ -26,9 +32,9 @@ The project strictly follows the provided technical, SEO, accessibility, and per
 - Search functionality across:
   - Title
   - Description
-  - Content text
+  - Content
 - Category-based filtering
-- Combined search and category filtering
+- Combined search + category filtering
 - Accessible article modal
 - Responsive layout for all screen sizes
 - Loading and error state handling
@@ -46,19 +52,18 @@ The project strictly follows the provided technical, SEO, accessibility, and per
 ---
 
 ## 📡 API Integration
-Blog data is fetched from:
-
-
-# Add This Section to Your README.md
-
-Copy and paste this into your README.md file:
+Blog data is fetched from:  
+> *(Add your API endpoint here)*
 
 ---
 
 ## 📸 Lighthouse Audit Results
 
+<details>
+<summary><strong>Click to expand full Lighthouse report</strong></summary>
+
 ### Desktop Performance Scores
-<img width="1727" height="836" alt="Screenshot 2026-01-29 123908" src="https://github.com/user-attachments/assets/90869239-e3dd-448e-bc85-64c9815fb187" />
+![Lighthouse Overview](https://github.com/user-attachments/assets/90869239-e3dd-448e-bc85-64c9815fb187)
 
 | Category | Score | Status |
 |----------|-------|--------|
@@ -67,12 +72,14 @@ Copy and paste this into your README.md file:
 | Best Practices | **100** 🟢 | Perfect |
 | SEO | **100** 🟢 | Perfect |
 
+---
+
 ### Detailed Category Reports
 
 <details>
-<summary><strong>Performance: 100/100</strong> ✅</summary>
+<summary><strong>Performance: 100/100 ✅</strong></summary>
 
-<img width="1678" height="784" alt="Screenshot 2026-01-29 124151" src="https://github.com/user-attachments/assets/494a40f6-64eb-4326-a4ec-08ac00c8af8f" />
+![Performance Screenshot](https://github.com/user-attachments/assets/494a40f6-64eb-4326-a4ec-08ac00c8af8f)
 
 **Core Web Vitals:**
 - First Contentful Paint: 0.3s
@@ -85,9 +92,9 @@ All metrics in the green zone!
 </details>
 
 <details>
-<summary><strong>Accessibility: 92/100</strong> ✅</summary>
+<summary><strong>Accessibility: 92/100 ✅</strong></summary>
 
-<img width="1699" height="793" alt="Screenshot 2026-01-29 124227" src="https://github.com/user-attachments/assets/16253618-72ea-4d0d-81a6-eb5db5aeed58" />
+![Accessibility Screenshot](https://github.com/user-attachments/assets/16253618-72ea-4d0d-81a6-eb5db5aeed58)
 
 **What's Working:**
 - Semantic HTML structure
@@ -103,9 +110,9 @@ Score exceeds the 85+ target requirement!
 </details>
 
 <details>
-<summary><strong>Best Practices: 100/100</strong> ✅</summary>
+<summary><strong>Best Practices: 100/100 ✅</strong></summary>
 
-<img width="1708" height="816" alt="Screenshot 2026-01-29 124251" src="https://github.com/user-attachments/assets/1ba9cb88-20d3-4f34-973a-cfeaf7050510" />
+![Best Practices Screenshot](https://github.com/user-attachments/assets/1ba9cb88-20d3-4f34-973a-cfeaf7050510)
 
 **Security & Standards:**
 - ✅ Effective CSP against XSS attacks
@@ -118,9 +125,9 @@ Perfect implementation!
 </details>
 
 <details>
-<summary><strong>SEO: 100/100</strong> ✅</summary>
+<summary><strong>SEO: 100/100 ✅</strong></summary>
 
-<img width="1721" height="752" alt="Screenshot 2026-01-29 124310" src="https://github.com/user-attachments/assets/d2858919-09d9-4104-a69d-8137263f687e" />
+![SEO Screenshot](https://github.com/user-attachments/assets/d2858919-09d9-4104-a69d-8137263f687e)
 
 **Optimizations:**
 - ✅ Valid structured data (JSON-LD)
@@ -134,6 +141,8 @@ Perfect implementation!
 Perfect search engine optimization!
 </details>
 
+---
+
 ### Summary
 
 **All target requirements exceeded!** 🎉
@@ -143,8 +152,8 @@ Perfect search engine optimization!
 - ✅ Best Practices: 100/100 (Target: 90+) - **+10 over target**
 - ✅ SEO: 100/100 (Target: 95+) - **+5 over target**
 
-**Tested on:** https://tech-blog-five-theta.vercel.app/  
+**Tested on:** [https://tech-blog-five-theta.vercel.app](https://tech-blog-five-theta.vercel.app)  
 **Date:** January 29, 2026  
 **Tool:** Chrome Lighthouse (DevTools)
 
----
+</details>
