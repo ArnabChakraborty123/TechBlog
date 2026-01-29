@@ -63,7 +63,9 @@ Blog data is fetched from:
 <summary><strong>Click to expand full Lighthouse report</strong></summary>
 
 ### Desktop Performance Scores
-<img src="https://github.com/user-attachments/assets/90869239-e3dd-448e-bc85-64c9815fb187" width="600" alt="Lighthouse Overview" />
+
+<img src="https://github.com/user-attachments/assets/7abb2987-aea8-47c7-96ca-ec5062285157" width="600" alt="Desktop Performance Screenshot" />
+
 
 | Category | Score | Status |
 |----------|-------|--------|
@@ -79,7 +81,8 @@ Blog data is fetched from:
 <details>
 <summary><strong>Performance: 100/100 ✅</strong></summary>
 
-<img src="https://github.com/user-attachments/assets/494a40f6-64eb-4326-a4ec-08ac00c8af8f" width="600" alt="Performance Screenshot" />
+<img  src="https://github.com/user-attachments/assets/e527172c-4122-45b2-b031-51e3c89a9e19"  width="600" alt="Performance Screenshot" />
+
 
 **Core Web Vitals:**
 - First Contentful Paint: 0.3s
@@ -94,7 +97,8 @@ All metrics in the green zone!
 <details>
 <summary><strong>Accessibility: 92/100 ✅</strong></summary>
 
-<img src="https://github.com/user-attachments/assets/16253618-72ea-4d0d-81a6-eb5db5aeed58" width="600" alt="Accessibility Screenshot" />
+<img  src="https://github.com/user-attachments/assets/9144cbb9-279c-4d3f-82b9-1c08121b256c" width="600" alt="Accessibility Screenshot" />
+
 
 **What's Working:**
 - Semantic HTML structure
@@ -112,7 +116,7 @@ Score exceeds the 85+ target requirement!
 <details>
 <summary><strong>Best Practices: 100/100 ✅</strong></summary>
 
-<img src="https://github.com/user-attachments/assets/1ba9cb88-20d3-4f34-973a-cfeaf7050510" width="600" alt="Best Practices Screenshot" />
+<img src="https://github.com/user-attachments/assets/debfe8da-fcce-4ab4-a079-5b0b616fff11" width="600" alt="Best Practices Screenshot" />
 
 **Security & Standards:**
 - ✅ Effective CSP against XSS attacks
@@ -127,7 +131,8 @@ Perfect implementation!
 <details>
 <summary><strong>SEO: 100/100 ✅</strong></summary>
 
-<img src="https://github.com/user-attachments/assets/d2858919-09d9-4104-a69d-8137263f687e" width="600" alt="SEO Screenshot" />
+<img src="https://github.com/user-attachments/assets/a6ddeb84-91c1-4829-9468-db8da55d21b5" width="600" alt="SEO Screenshot"/>
+
 
 **Optimizations:**
 - ✅ Valid structured data (JSON-LD)
