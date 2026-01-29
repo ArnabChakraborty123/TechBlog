@@ -9,7 +9,7 @@ This project focuses on performance, accessibility, and modern SEO best practice
 👉 [https://tech-blog-five-theta.vercel.app](https://tech-blog-five-theta.vercel.app)
 
 ## 📂 GitHub Repository
-👉 [https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPOSITORY-NAME](https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPOSITORY-NAME)
+👉 [https://github.com/ArnabChakraborty123/TechBlog](https://github.com/ArnabChakraborty123/TechBlog)
 
 ---
 
@@ -53,7 +53,7 @@ Users can search articles, filter them by category, and read full content inside
 
 ## 📡 API Integration
 Blog data is fetched from:  
-> *(Add your API endpoint here)*
+> *(slingacademy.com/v1/sample-data/blog-posts?offset=0&limit=10)*
 
 ---
 
