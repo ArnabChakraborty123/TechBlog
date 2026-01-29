@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech Blog Website – Frontend Technical Assessment
 
-## Getting Started
+A fast, SEO-optimized tech blog website built using **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.  
+This project focuses on performance, accessibility, and modern SEO best practices.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔗 Live Deployment
+👉 https://YOUR-VERCEL-URL.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 GitHub Repository
+👉 https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPOSITORY-NAME
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Project Overview
+This application displays a list of tech blog articles fetched from a public API.  
+Users can search articles, filter them by category, and read full content inside an accessible modal.  
+The project strictly follows the provided technical, SEO, accessibility, and performance requirements.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Features
+- SEO-optimized homepage
+- Article grid displaying **exactly 10 blog posts**
+- Search functionality across:
+  - Title
+  - Description
+  - Content text
+- Category-based filtering
+- Combined search and category filtering
+- Accessible article modal
+- Responsive layout for all screen sizes
+- Loading and error state handling
+- Keyboard navigation support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Technologies Used
+- **Next.js** (Latest version with App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Git & GitHub**
+- **Vercel** (Deployment)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📡 API Integration
+Blog data is fetched from:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
