@@ -1,6 +1,10 @@
 import { BlogPost } from './types';
 
-export const formatDate = (dateString: string): string => {
+export const formatDate = (dateString?: string): string => {
+  // DummyJSON posts don't have dates, so we'll return a default or handle gracefully
+  if (!dateString) {
+    return 'Recently';
+  }
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -9,9 +13,12 @@ export const formatDate = (dateString: string): string => {
   });
 };
 
-export const getAllCategories = (posts: BlogPost[]): string[] => {
-  const categories = new Set(posts.map(post => post.category));
-  return Array.from(categories).sort();
+export const getAllTags = (posts: BlogPost[]): string[] => {
+  const tagsSet = new Set<string>();
+  posts.forEach(post => {
+    post.tags.forEach(tag => tagsSet.add(tag));
+  });
+  return Array.from(tagsSet).sort();
 };
 
 export const filterPostsBySearch = (
@@ -23,17 +30,17 @@ export const filterPostsBySearch = (
   const lowerQuery = query.toLowerCase();
   return posts.filter(post =>
     post.title.toLowerCase().includes(lowerQuery) ||
-    post.description.toLowerCase().includes(lowerQuery) ||
-    post.content_text.toLowerCase().includes(lowerQuery)
+    post.body.toLowerCase().includes(lowerQuery) ||
+    post.tags.some(tag => tag.toLowerCase().includes(lowerQuery))
   );
 };
 
-export const filterPostsByCategory = (
+export const filterPostsByTag = (
   posts: BlogPost[],
-  category: string | null
+  tag: string | null
 ): BlogPost[] => {
-  if (!category) return posts;
-  return posts.filter(post => post.category === category);
+  if (!tag) return posts;
+  return posts.filter(post => post.tags.includes(tag));
 };
 
 export const stripHtmlTags = (html: string): string => {

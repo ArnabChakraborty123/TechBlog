@@ -36,14 +36,29 @@ export function getArticleStructuredData(article: BlogPost) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
-    description: article.description,
-    image: article.photo_url,
-    datePublished: article.created_at,
-    dateModified: article.updated_at,
+    articleBody: article.body,
+    image: `https://picsum.photos/seed/${article.id}/800/600`,
+    keywords: article.tags.join(', '),
     author: {
+      '@type': 'Person',
+      name: `User ${article.userId}`,
+    },
+    publisher: {
       '@type': 'Organization',
       name: 'Tech Blog',
     },
+    interactionStatistic: [
+      {
+        '@type': 'InteractionCounter',
+        interactionType: 'https://schema.org/LikeAction',
+        userInteractionCount: article.reactions.likes,
+      },
+      {
+        '@type': 'InteractionCounter',
+        interactionType: 'https://schema.org/DislikeAction',
+        userInteractionCount: article.reactions.dislikes,
+      },
+    ],
   };
 }
 
@@ -57,10 +72,9 @@ export function getAllArticlesStructuredData(articles: BlogPost[]) {
     hasPart: articles.map((article) => ({
       '@type': 'Article',
       headline: article.title,
-      description: article.description,
-      image: article.photo_url,
-      datePublished: article.created_at,
-      dateModified: article.updated_at,
+      articleBody: article.body,
+      image: `https://picsum.photos/seed/${article.id}/800/600`,
+      keywords: article.tags.join(', '),
     })),
   };
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { BlogPost } from '@/lib/types';
 import { formatDate } from '@/lib/blog-utils';
-import { X, Clock, Calendar, Share2, Bookmark, Eye, Check, Link as LinkIcon, Twitter, Facebook, Linkedin } from 'lucide-react';
+import { X, Clock, Calendar, Share2, Bookmark, Eye, Check, Link as LinkIcon, Twitter, Facebook, Linkedin, ThumbsUp, ThumbsDown } from 'lucide-react';
 
 interface ArticleModalProps {
   article: BlogPost | null;
@@ -39,7 +39,7 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
     ? `${window.location.origin}/article/${article.id}` 
     : '';
   const shareTitle = article.title;
-  const shareDescription = article.description;
+  const shareDescription = article.body.substring(0, 150);
 
   const handleShare = async () => {
     // Check if Web Share API is available (mobile devices)
@@ -127,7 +127,7 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
             {/* Article Header Image */}
             <div className="relative h-[400px] w-full overflow-hidden">
               <Image
-                src={article.photo_url || '/placeholder-article.jpg'}
+                src={`https://picsum.photos/seed/${article.id}/1200/800`}
                 alt={article.title}
                 fill
                 className="object-cover"
@@ -136,12 +136,17 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
-              {/* Floating Category Badge */}
-              <div className="absolute top-6 left-6 z-10">
-                <span className="inline-flex items-center gap-2 bg-primary/90 dark:bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full backdrop-blur-sm shadow-lg dark:glow-purple">
-                  <span className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse" />
-                  {article.category}
-                </span>
+              {/* Floating Tags Badges */}
+              <div className="absolute top-6 left-6 z-10 flex flex-wrap gap-2">
+                {article.tags.slice(0, 3).map((tag, index) => (
+                  <span 
+                    key={index}
+                    className="inline-flex items-center gap-2 bg-primary/90 dark:bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full backdrop-blur-sm shadow-lg dark:glow-purple"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse" />
+                    {tag}
+                  </span>
+                ))}
               </div>
 
               {/* Decorative elements */}
@@ -157,17 +162,17 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
                 <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    <time>{formatDate(article.created_at)}</time>
+                    <time>{formatDate()}</time>
                   </div>
                   <div className="w-px h-4 bg-border" />
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    <span>5 min read</span>
+                    <span>{Math.ceil(article.body.split(' ').length / 200)} min read</span>
                   </div>
                   <div className="w-px h-4 bg-border" />
                   <div className="flex items-center gap-2">
                     <Eye className="w-4 h-4" />
-                    <span>1.2K views</span>
+                    <span>{article.views.toLocaleString()} views</span>
                   </div>
                 </div>
 
@@ -179,10 +184,17 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
                   {article.title}
                 </h1>
 
-                {/* Description */}
-                <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed border-l-4 border-primary pl-4 dark:bg-primary/5 py-2 rounded-r">
-                  {article.description}
-                </p>
+                {/* Reactions */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary dark:bg-secondary/50 border border-border/50">
+                    <ThumbsUp className="w-4 h-4 text-green-500" />
+                    <span className="text-sm font-semibold">{article.reactions.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary dark:bg-secondary/50 border border-border/50">
+                    <ThumbsDown className="w-4 h-4 text-red-500" />
+                    <span className="text-sm font-semibold">{article.reactions.dislikes}</span>
+                  </div>
+                </div>
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3 mb-8 pb-8 border-b border-border/50 relative">
@@ -266,10 +278,9 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
 
                 {/* Article Content */}
                 <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground/90 prose-strong:text-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:bg-muted prose-pre:border prose-pre:border-border/50">
-                  <div
-                    className="leading-relaxed space-y-6"
-                    dangerouslySetInnerHTML={{ __html: article.content_html }}
-                  />
+                  <div className="leading-relaxed space-y-6 whitespace-pre-wrap">
+                    {article.body}
+                  </div>
                 </article>
 
                 {/* Article Footer */}
@@ -277,15 +288,12 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-primary-foreground font-bold text-lg">
-                        TB
+                        {`U${article.userId}`}
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">TechBlog Team</p>
-                        <p className="text-sm text-muted-foreground">Expert Contributors</p>
+                        <p className="font-semibold text-foreground">User {article.userId}</p>
+                        <p className="text-sm text-muted-foreground">Content Creator</p>
                       </div>
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      Last updated: {formatDate(article.updated_at)}
                     </div>
                   </div>
                 </div>
@@ -293,9 +301,9 @@ export function ArticleModal({ article, onClose }: ArticleModalProps) {
                 {/* Tags */}
                 <div className="mt-8 flex flex-wrap gap-2">
                   <span className="text-xs font-semibold text-muted-foreground mr-2">Tags:</span>
-                  {['Technology', 'Development', 'Tutorial'].map((tag) => (
+                  {article.tags.map((tag, index) => (
                     <button
-                      key={tag}
+                      key={index}
                       className="text-xs px-3 py-1.5 rounded-full bg-secondary dark:bg-secondary/50 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                     >
                       #{tag}

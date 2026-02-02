@@ -1,11 +1,11 @@
 import { ApiResponse } from './types';
 
-const API_BASE_URL = 'https://api.slingacademy.com/v1/sample-data/blog-posts';
+const API_BASE_URL = 'https://dummyjson.com/posts';
 
-export const fetchBlogPosts = async (offset = 0, limit = 10): Promise<ApiResponse> => {
+export const fetchBlogPosts = async (skip = 0, limit = 10): Promise<ApiResponse> => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}?offset=${offset}&limit=${limit}`,
+      `${API_BASE_URL}?skip=${skip}&limit=${limit}`,
       {
         next: { revalidate: 3600 }, // Revalidate every hour
       }
